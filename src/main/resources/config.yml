@@ -1,0 +1,135 @@
+Ad:
+  # There are following permissions:
+  # exoworld.ad.send -> Allows sending an ad
+  # exoworld.ad.reload -> Reloads the config
+  # exoworld.ad.admin -> Allows to send ads for free
+  # exoworld.ad.toggle -> Allows to toggle the sending of ads
+  # exoworld.ad.admin.infos -> Sees Infos like who disabled ads
+
+  PublicAnnounceIfGetsDisabled: false
+
+  Time:
+    TimeBetween: 60 #In Seconds
+
+    TimeBetweenSamePlayer:
+      Default: 120
+
+  Messages:
+    NoPermission: "You are not allowed to send an ad!"
+    NotEnoughMoney: "You need more money (%price%)!"
+    CurrentlyDisabled: "Ads are currently disabled"
+
+    AdsDisabledInfo: "The Ads are now disabled"
+    AdsDisabledInfoAdmin: "The Ads got disabled by %admin%"
+    AdsEnabledInfo: "The Ads are now enabled"
+    AdsEnabledInfoAdmin: "The Ads got enabled by %admin%"
+
+    Cooldown: "You have to wait %timeRemaining% Seconds before you can send an Ad!"
+    CooldownSamePlayer: "You have to wait %timeRemaining% Seconds before you can send an Ad!"
+
+    #Possible Placeholder: %color% for color name %colorCode% for code to use in chat
+    #and %colorDisplayName% for custom name and %price% and all Placerholder API Placerholder
+    ColorPricesText: "%color% price per char is %price%" #Placeholder to show this in the Ad info is %allowedColors%
+
+    CostsText: "The Ad would cost %price%"
+
+    #Possbile Placeholder: %username%, %adText% and all Placerholder API Placerholder
+    Text:
+      - "******** Ad from %username% ********"
+      - "%adText%"
+      - "******** Ad from %username% end ********"
+
+    #Possible Placeholder: %allowedColors% and all Placerholder API Placerholder
+    Info:
+      - "Infos:"
+      - "%allowedColors%"
+
+
+  Price:
+    BasePrice: 500
+    PricePerChar: 10
+
+    # It also says what Colors are allowed in an Ad
+    Colors:
+      black:
+        DisplayName: "Black"
+        Enabled: false
+        Price: 0
+      dark_blue:
+        DisplayName: "Dark Blue"
+        Enabled: false
+        Price: 0
+      dark_green:
+        DisplayName: "Dark Green"
+        Enabled: false
+        Price: 0
+      dark_aqua:
+        DisplayName: "Dark Aqua"
+        Enabled: false
+        Price: 0
+      dark_red:
+        DisplayName: "Dark Red"
+        Enabled: false
+        Price: 0
+      dark_purple:
+        DisplayName: "Dark Purple"
+        Enabled: false
+        Price: 0
+      gold:
+        DisplayName: "Gold"
+        Enabled: false
+        Price: 0
+      gray:
+        DisplayName: "Gray"
+        Enabled: false
+        Price: 0
+      dark_gray:
+        DisplayName: "Dark Gray"
+        Enabled: false
+        Price: 0
+      blue:
+        DisplayName: "Blue"
+        Enabled: false
+        Price: 0
+      green:
+        DisplayName: "Green"
+        Enabled: false
+        Price: 0
+      aqua:
+        DisplayName: "Aqua"
+        Enabled: false
+        Price: 0
+      red:
+        DisplayName: "Red"
+        Enabled: false
+        Price: 0
+      light_purple:
+        DisplayName: "Light Purple"
+        Enabled: false
+        Price: 0
+      yellow:
+        DisplayName: "Yellow"
+        Enabled: false
+        Price: 0
+      white:
+        DisplayName: "White"
+        Enabled: false
+        Price: 0
+      bold:
+        DisplayName: "Bold"
+        Enabled: false
+        Price: 0
+      strikethrough:
+        DisplayName: "Striketrough"
+        Enabled: false
+        Price: 0
+      underline:
+        DisplayName: "Underlined"
+        Enabled: false
+        Price: 0
+      italic:
+        DisplayName: "Italic"
+        Enabled: false
+        Price: 0
+
+

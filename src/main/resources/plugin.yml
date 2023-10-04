@@ -1,0 +1,46 @@
+name: Ads
+version: '${project.version}'
+main: de.exoworld.ads.Main
+api-version: '1.20'
+author: Maurice_009
+
+softdepend:
+  - PlaceHolderAPI
+depend:
+  - Vault
+
+commands:
+  ad:
+    aliases:
+      - "werbung"
+    permission: "exoworld.ad.send"
+
+  adreload:
+    aliases:
+      - "adrl"
+      - "werbungreload"
+    permission: "exoworld.ad.reload"
+
+  adadmin:
+    aliases:
+      - "aad"
+      - "awerbung"
+    permission: "exoworld.ad.admin"
+    description: "Skips all cooldowns"
+
+  adtoggle:
+    aliases:
+      - "adt"
+      - "werbungtoggle"
+    permission: "exoworld.ad.toggle"
+
+  adprice:
+    aliases:
+      - "adp"
+      - "werbungkosten"
+      - "wkosten"
+    permission: "exoworld.ad.show.price"
+
+permissions:
+  exoworld.ad.send:
+    default: true
