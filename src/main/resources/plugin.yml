@@ -1,4 +1,4 @@
-name: Ads
+name: eXoAds
 version: '${project.version}'
 main: de.exoworld.ads.Main
 api-version: '1.20'

@@ -27,8 +27,9 @@ Ad:
     Cooldown: "You have to wait %timeRemaining% Seconds before you can send an Ad!"
     CooldownSamePlayer: "You have to wait %timeRemaining% Seconds before you can send an Ad!"
 
-    #Possible Placeholder: %color% for color name %colorCode% for code to use in chat
-    #and %colorDisplayName% for custom name and %price% and all Placerholder API Placerholder
+    #Possible Placeholder: %colorName% for color name %colorCode% for the code to use in chat
+    #and %colorDisplayName% for custom name and %price%, %color% for the color to highlight the color.
+    #all Placerholder API Placerholder
     ColorPricesText: "%color% price per char is %price%" #Placeholder to show this in the Ad info is %allowedColors%
 
     CostsText: "The Ad would cost %price%"

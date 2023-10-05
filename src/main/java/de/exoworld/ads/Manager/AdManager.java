@@ -49,10 +49,12 @@ public class AdManager {
         String text = Settings.getAdMessages("ColorPricesText");
         for (Map.Entry<String, Boolean> e : Settings.getAllowedColors().entrySet()) {
             if (e.getValue()) {
+                char colorChar = ChatColor.valueOf(e.getKey().toUpperCase()).getChar();
                 temp.add(PlaceholderAPI.setPlaceholders(p,
                         text.replaceAll("%colorDisplayName%", Settings.getColorDisplayName(e.getKey(), false))
-                                .replaceAll("%colorCode%", "&" + ChatColor.valueOf(e.getKey().toUpperCase()).getChar())
-                                .replaceAll("%color%", e.getKey())
+                                .replaceAll("%colorCode%", "&" + colorChar)
+                                .replaceAll("%colorName%", e.getKey())
+                                .replaceAll("%color%", ChatColor.getByChar(colorChar).toString())
                                 .replaceAll("%price%", String.valueOf(Settings.getAdPrice(e.getKey(), true)))));
             }
         }
@@ -97,6 +99,7 @@ public class AdManager {
             } else if (Settings.colors.get("&" + s.charAt(0)) != null) {
                 if (isColorAllowed("&" + s.charAt(0), true)) {
                     newText.append(ChatColor.translateAlternateColorCodes('&', "&" + s));
+
                     continue;
                 }
                 newText.append("&" + s);
@@ -104,6 +107,7 @@ public class AdManager {
             } else if (Settings.decorations.get("&" + s.charAt(0)) != null) {
                 if (isColorAllowed("&" + s.charAt(0), true)) {
                     newText.append(ChatColor.translateAlternateColorCodes('&', "&" + s));
+
                     continue;
                 }
                 newText.append("&" + s);
@@ -120,6 +124,7 @@ public class AdManager {
         double price = Settings.getAdPrice("BasePrice", false);
         double multiplicator = Settings.getAdPrice("PricePerChar", false);
         String lastColor = "";
+        String lastType = "";
 
         if (!text.contains("&")) {
             return price + text.replace(" ", "").length() * Settings.getAdPrice("PricePerChar", false);
@@ -144,6 +149,14 @@ public class AdManager {
                         multiplicator -= Settings.getColorPrice("&" + lastColor, true);
                     }
 
+                    if (!lastType.equals("") && lastType.equalsIgnoreCase("deco")) {
+                        for (String d : decos) {
+                            multiplicator -= Settings.getColorPrice(d, true);
+                        }
+                        decos.clear();
+                    }
+
+                    lastType = "color";
                     lastColor = String.valueOf(s.charAt(0));
                     multiplicator += colorPrice;
                     length -= 2;
@@ -152,6 +165,7 @@ public class AdManager {
             } else if (Settings.decorations.get("&" + s.charAt(0)) != null) {
                 if (isColorAllowed(String.valueOf(s.charAt(0)), true)) {
                     if (!decos.contains("&" + s.charAt(0))) {
+                        lastType = "deco";
                         decos.add("&" + s.charAt(0));
                         multiplicator += Settings.getColorPrice("&" + s.charAt(0), true);
                         length -= 2;

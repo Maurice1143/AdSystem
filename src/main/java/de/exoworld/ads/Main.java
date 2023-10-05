@@ -9,7 +9,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.util.logging.Logger;
 
 public final class Main extends JavaPlugin {
-    private static final Logger log = Logger.getLogger("CustomTablist");
+    private static final Logger log = Logger.getLogger("eXoAds");
     private static Main mainInstance;
     private static Economy econ;
     private Commands commandHandler = new Commands();
